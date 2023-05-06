@@ -36,7 +36,7 @@ public class Reserva implements Serializable {
 	//uni-directional many-to-one association to Coche
 	@ManyToOne
 	@JoinColumn(name="id_coche")
-	private Coche coch;
+	private Coche coche;
 
 	//uni-directional many-to-one association to Usuario
 	@ManyToOne
@@ -89,12 +89,12 @@ public class Reserva implements Serializable {
 		this.precioTotal = precioTotal;
 	}
 
-	public Coche getCoch() {
-		return this.coch;
+	public Coche getCoche() {
+		return this.coche;
 	}
 
-	public void setCoch(Coche coch) {
-		this.coch = coch;
+	public void setCoche(Coche coche) {
+		this.coche = coche;
 	}
 
 	public Usuario getUsuario() {
@@ -108,7 +108,7 @@ public class Reserva implements Serializable {
 	@Override
 	public String toString() {
 		return "Reserva [idReserva=" + idReserva + ", fechaFin=" + fechaFin + ", fechaInicio=" + fechaInicio
-				+ ", precioTotal=" + precioTotal + ", coch=" + coch + ", usuario=" + usuario + ", direccionEntrega="
+				+ ", precioTotal=" + precioTotal + ", coche=" + coche + ", usuario=" + usuario + ", direccionEntrega="
 				+ direccionEntrega + "]";
 	}
 

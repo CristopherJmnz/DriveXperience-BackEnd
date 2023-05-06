@@ -18,4 +18,14 @@ public class CocheServiceImpl implements CocheService{
 		return crep.findAll();
 	}
 
+	@Override
+	public Coche buscarUno(int idCoche) {
+		return crep.findById(idCoche).orElse(null);
+	}
+
+	@Override
+	public List<Coche> buscarCochesPorMarca(int idMarca) {
+		return crep.buscarCochePorMarca(idMarca);
+	}
+
 }

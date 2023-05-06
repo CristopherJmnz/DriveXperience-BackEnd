@@ -6,4 +6,6 @@ import es.tfg.drivex.entitybeans.Coche;
 
 public interface CocheService {
 	List<Coche> buscarTodos();
+	Coche buscarUno(int idCoche);
+	List<Coche>buscarCochesPorMarca(int idMarca);
 }
