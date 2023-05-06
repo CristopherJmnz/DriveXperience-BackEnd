@@ -24,7 +24,7 @@ public class CocheController {
 		return cserv.buscarUno(idCoche);
 	}
 	
-	@GetMapping("/buscarTodos")
+	@GetMapping("/todos")
 	public List<Coche> buscarTodos() {
 		return cserv.buscarTodos();
 	}
