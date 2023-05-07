@@ -76,7 +76,7 @@ public class Coche implements Serializable {
 	@Column(name="precio_semana")
 	private BigDecimal precioSemana;
 
-	private String transmision;
+	private String traccion;
 
 	@Column(name="velocidad_max")
 	private BigDecimal velocidadMax;
@@ -368,14 +368,16 @@ public class Coche implements Serializable {
 
 
 
-	public String getTransmision() {
-		return transmision;
+
+
+	public String getTraccion() {
+		return traccion;
 	}
 
 
 
-	public void setTransmision(String transmision) {
-		this.transmision = transmision;
+	public void setTraccion(String traccion) {
+		this.traccion = traccion;
 	}
 
 
@@ -456,7 +458,7 @@ public class Coche implements Serializable {
 				+ ", imagen2=" + imagen2 + ", imagen3=" + imagen3 + ", imagen4=" + imagen4 + ", imagen5=" + imagen5
 				+ ", imagen6=" + imagen6 + ", imagen7=" + imagen7 + ", imagen8=" + imagen8 + ", imagen9=" + imagen9
 				+ ", nombreCoche=" + nombreCoche + ", plazas=" + plazas + ", potenciaMax=" + potenciaMax
-				+ ", precioDia=" + precioDia + ", precioSemana=" + precioSemana + ", transmision=" + transmision
+				+ ", precioDia=" + precioDia + ", precioSemana=" + precioSemana + ", traccion=" + traccion
 				+ ", velocidadMax=" + velocidadMax + ", marca=" + marca + "]";
 	}
 
