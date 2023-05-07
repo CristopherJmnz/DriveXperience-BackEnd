@@ -33,4 +33,14 @@ public class CocheController {
 	public List<Coche> buscarCochesPorMarca(@PathVariable("id") int idMarca) {
 		return cserv.buscarCochesPorMarca(idMarca);
 	}
+	
+	@GetMapping("/menorMayor")
+	public List<Coche> menorMayor() {
+		return cserv.CochesPrecioMenorMayor();
+	}
+	
+	@GetMapping("/mayorMenor")
+	public List<Coche> mayorMenor() {
+		return cserv.CochesPrecioMayorMenor();
+	}
 }

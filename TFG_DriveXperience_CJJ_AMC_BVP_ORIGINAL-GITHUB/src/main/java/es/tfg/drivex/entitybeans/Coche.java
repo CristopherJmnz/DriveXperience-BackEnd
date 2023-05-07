@@ -32,11 +32,11 @@ public class Coche implements Serializable {
 	@Column(name="descripcion_general")
 	private String descripcionGeneral;
 	
-	@Column(name="descripcion_diseno")
-	private String descripcionDiseno;
+	@Column(name="descripcion_frontal")
+	private String descripcionFrontal;
 	
-	@Column(name="descripcion_motor")
-	private String descripcionMotor;
+	@Column(name="descripcion_trasera")
+	private String descripcionTrasera;
 
 	private String estado;
 	
@@ -163,27 +163,7 @@ public class Coche implements Serializable {
 
 
 
-	public String getDescripcionDiseno() {
-		return descripcionDiseno;
-	}
-
-
-
-	public void setDescripcionDiseno(String descripcionDiseno) {
-		this.descripcionDiseno = descripcionDiseno;
-	}
-
-
-
-	public String getDescripcionMotor() {
-		return descripcionMotor;
-	}
-
-
-
-	public void setDescripcionMotor(String descripcionMotor) {
-		this.descripcionMotor = descripcionMotor;
-	}
+	
 
 
 
@@ -423,17 +403,27 @@ public class Coche implements Serializable {
 	}
 
 
-	@Override
-	public String toString() {
-		return "Coche [idCoche=" + idCoche + ", aceleracion=" + aceleracion + ", cambio=" + cambio + ", color=" + color
-				+ ", combustible=" + combustible + ", descripcionGeneral=" + descripcionGeneral + ", descripcionDiseno="
-				+ descripcionDiseno + ", descripcionMotor=" + descripcionMotor + ", estado=" + estado + ", banner="
-				+ banner + ", imagen1=" + imagen1 + ", imagen10=" + imagen10 + ", imagen2=" + imagen2 + ", imagen3="
-				+ imagen3 + ", imagen4=" + imagen4 + ", imagen5=" + imagen5 + ", imagen6=" + imagen6 + ", imagen7="
-				+ imagen7 + ", imagen8=" + imagen8 + ", imagen9=" + imagen9 + ", nombreCoche=" + nombreCoche
-				+ ", plazas=" + plazas + ", potenciaMax=" + potenciaMax + ", precioDia=" + precioDia + ", precioSemana="
-				+ precioSemana + ", transmision=" + transmision + ", velocidadMax=" + velocidadMax + ", marca=" + marca
-				+ "]";
+
+	public String getDescripcionFrontal() {
+		return descripcionFrontal;
+	}
+
+
+
+	public void setDescripcionFrontal(String descripcionFrontal) {
+		this.descripcionFrontal = descripcionFrontal;
+	}
+
+
+
+	public String getDescripcionTrasera() {
+		return descripcionTrasera;
+	}
+
+
+
+	public void setDescripcionTrasera(String descripcionTrasera) {
+		this.descripcionTrasera = descripcionTrasera;
 	}
 
 
@@ -453,6 +443,21 @@ public class Coche implements Serializable {
 			return false;
 		Coche other = (Coche) obj;
 		return idCoche == other.idCoche;
+	}
+
+
+
+	@Override
+	public String toString() {
+		return "Coche [idCoche=" + idCoche + ", aceleracion=" + aceleracion + ", cambio=" + cambio + ", color=" + color
+				+ ", combustible=" + combustible + ", descripcionGeneral=" + descripcionGeneral
+				+ ", descripcionFrontal=" + descripcionFrontal + ", descripcionTrasera=" + descripcionTrasera
+				+ ", estado=" + estado + ", banner=" + banner + ", imagen1=" + imagen1 + ", imagen10=" + imagen10
+				+ ", imagen2=" + imagen2 + ", imagen3=" + imagen3 + ", imagen4=" + imagen4 + ", imagen5=" + imagen5
+				+ ", imagen6=" + imagen6 + ", imagen7=" + imagen7 + ", imagen8=" + imagen8 + ", imagen9=" + imagen9
+				+ ", nombreCoche=" + nombreCoche + ", plazas=" + plazas + ", potenciaMax=" + potenciaMax
+				+ ", precioDia=" + precioDia + ", precioSemana=" + precioSemana + ", transmision=" + transmision
+				+ ", velocidadMax=" + velocidadMax + ", marca=" + marca + "]";
 	}
 
 	
