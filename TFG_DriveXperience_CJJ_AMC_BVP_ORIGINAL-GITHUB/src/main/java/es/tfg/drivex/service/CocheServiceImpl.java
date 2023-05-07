@@ -28,4 +28,14 @@ public class CocheServiceImpl implements CocheService{
 		return crep.buscarCochePorMarca(idMarca);
 	}
 
+	@Override
+	public List<Coche> CochesPrecioMenorMayor() {
+		return crep.CochesPrecioMenorMayor();
+	}
+
+	@Override
+	public List<Coche> CochesPrecioMayorMenor() {
+		return crep.CochesPrecioMayorMenor();
+	}
+
 }
