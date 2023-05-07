@@ -13,9 +13,17 @@ public interface CocheRepository extends JpaRepository<Coche, Integer>{
 	List<Coche>buscarCochePorMarca(int idMarca);
 	
 	
+	@Query("select c from Coche c where c.marca.idMarca=?1 order by precioDia ASC")
+	List<Coche>CochesPrecioMenorMayor(int idMarca);
+	
+	@Query("select c from Coche c where c.marca.idMarca=?1 order by precioDia DESC")
+	List<Coche>CochesPrecioMayorMenor(int idMarca);
+	
+	
+	
 	@Query("select c from Coche c order by precioDia ASC")
-	List<Coche>CochesPrecioMenorMayor();
+	List<Coche>TodosCochesPrecioMenorMayor();
 	
 	@Query("select c from Coche c order by precioDia DESC")
-	List<Coche>CochesPrecioMayorMenor();
+	List<Coche>TodosCochesPrecioMayorMenor();
 }

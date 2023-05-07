@@ -29,13 +29,25 @@ public class CocheServiceImpl implements CocheService{
 	}
 
 	@Override
-	public List<Coche> CochesPrecioMenorMayor() {
-		return crep.CochesPrecioMenorMayor();
+	public List<Coche> CochesPrecioMenorMayor(int idMarca) {
+		return crep.CochesPrecioMenorMayor(idMarca);
 	}
 
 	@Override
-	public List<Coche> CochesPrecioMayorMenor() {
-		return crep.CochesPrecioMayorMenor();
+	public List<Coche> CochesPrecioMayorMenor(int idMarca) {
+		return crep.CochesPrecioMayorMenor(idMarca);
+	}
+
+	@Override
+	public List<Coche> todosCochesPrecioMenorMayor() {
+		// TODO Auto-generated method stub
+		return crep.TodosCochesPrecioMenorMayor();
+	}
+
+	@Override
+	public List<Coche> todosCochesPrecioMayorMenor() {
+		// TODO Auto-generated method stub
+		return crep.TodosCochesPrecioMayorMenor();
 	}
 
 }

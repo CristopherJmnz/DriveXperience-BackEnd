@@ -8,6 +8,8 @@ public interface CocheService {
 	List<Coche> buscarTodos();
 	Coche buscarUno(int idCoche);
 	List<Coche>buscarCochesPorMarca(int idMarca);
-	List<Coche>CochesPrecioMenorMayor();
-	List<Coche>CochesPrecioMayorMenor();
+	List<Coche>CochesPrecioMenorMayor(int idMarca);
+	List<Coche>CochesPrecioMayorMenor(int idMarca);
+	List<Coche>todosCochesPrecioMenorMayor();
+	List<Coche>todosCochesPrecioMayorMenor();
 }
