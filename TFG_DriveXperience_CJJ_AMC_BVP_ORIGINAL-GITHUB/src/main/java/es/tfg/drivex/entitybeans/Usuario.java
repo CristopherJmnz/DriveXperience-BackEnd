@@ -2,6 +2,8 @@ package es.tfg.drivex.entitybeans;
 
 import java.io.Serializable;
 import javax.persistence.*;
+
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import java.util.Objects;
@@ -51,6 +53,7 @@ public class Usuario implements Serializable {
 	private List<Tarjeta> tarjetas;
 
 	public Usuario() {
+		tarjetas = new ArrayList<>();
 	}
 
 	public String getEmail() {
@@ -132,5 +135,19 @@ public class Usuario implements Serializable {
 		return Objects.equals(email, other.email);
 	}
 
+	
+	public void addTarjeta(Tarjeta tarjeta) {
+		if (tarjetas == null)
+			tarjetas = new ArrayList<>();
+		tarjetas.add(tarjeta);
+		
+	}
+	
+	public void removeTarjeta(Tarjeta tarjeta) {
+		if (tarjetas == null)
+			tarjetas = new ArrayList<>();
+		tarjetas.remove(tarjeta);
+		
+	}
 	
 }
