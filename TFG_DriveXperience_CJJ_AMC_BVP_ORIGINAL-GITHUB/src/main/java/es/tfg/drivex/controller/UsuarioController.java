@@ -9,10 +9,14 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
+import es.tfg.drivex.dto.ReservaDto;
 import es.tfg.drivex.entitybeans.Reserva;
 import es.tfg.drivex.entitybeans.Tarjeta;
 import es.tfg.drivex.entitybeans.Usuario;
 import es.tfg.drivex.repository.UsuarioRepository;
+import es.tfg.drivex.service.CocheService;
+import es.tfg.drivex.service.ReservaService;
 import es.tfg.drivex.service.UsuarioService;
 
 @RestController
@@ -25,6 +29,11 @@ public class UsuarioController {
 	@Autowired
 	private UsuarioRepository urep;
 	
+	@Autowired
+	private ReservaService rserv;
+	
+	@Autowired
+	private CocheService cserv;
 	
 	@GetMapping("/reservas/{email}")
 	public List<Reserva> reservasUsuario(@PathVariable String email) {
@@ -92,5 +101,19 @@ public class UsuarioController {
 		Usuario usu=userv.findByEmail(email);
 		usu.removeTarjeta(tarjeta);
 		return tarjeta;
+	}
+	
+	
+	@PostMapping("/reserva")
+	public ReservaDto procesarReserva(@RequestBody ReservaDto reservadto){
+		Reserva reserva = new Reserva();
+		reserva.setCoche(cserv.buscarUno(reservadto.getIdCoche()));
+		reserva.setUsuario(urep.findById(reservadto.getEmail()).orElse(null));
+		reserva.setFechaFin(reservadto.getFechaFin());
+		reserva.setFechaInicio(reservadto.getFechaInicio());
+		reserva.setIdReserva(0);
+		reserva.setPrecioTotal(reservadto.getPrecioTotal());
+		rserv.altaReserva(reserva);
+		return reservadto;
 	}
 }
