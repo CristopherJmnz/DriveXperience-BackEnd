@@ -107,6 +107,7 @@ public class UsuarioController {
 	@PostMapping("/reserva")
 	public ReservaDto procesarReserva(@RequestBody ReservaDto reservadto){
 		Reserva reserva = new Reserva();
+		System.out.println(cserv.buscarUno(reservadto.getIdCoche()));
 		reserva.setCoche(cserv.buscarUno(reservadto.getIdCoche()));
 		reserva.setUsuario(urep.findById(reservadto.getEmail()).orElse(null));
 		reserva.setFechaFin(reservadto.getFechaFin());
